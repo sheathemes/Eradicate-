@@ -1,0 +1,510 @@
+<!--
+
+╭━━━┳╮╱╭┳━━━┳━━━┳━━━━┳╮╱╭┳━━━┳━╮╭━┳━━━┳━━━╮
+┃╭━╮┃┃╱┃┃╭━━┫╭━╮┃╭╮╭╮┃┃╱┃┃╭━━┫┃╰╯┃┃╭━━┫╭━╮┃
+┃╰━━┫╰━╯┃╰━━┫┃╱┃┣╯┃┃╰┫╰━╯┃╰━━┫╭╮╭╮┃╰━━┫╰━━╮
+╰━━╮┃╭━╮┃╭━━┫╰━╯┃╱┃┃╱┃╭━╮┃╭━━┫┃┃┃┃┃╭━━┻━━╮┃
+┃╰━╯┃┃╱┃┃╰━━┫╭━╮┃╱┃┃╱┃┃╱┃┃╰━━┫┃┃┃┃┃╰━━┫╰━╯┃
+╰━━━┻╯╱╰┻━━━┻╯╱╰╯╱╰╯╱╰╯╱╰┻━━━┻╯╰╯╰┻━━━┻━━━╯
+
+page ⎾ERADICATE⏌ by sheathemes @ tumblr
+
+- TERMS -
+
+I. Do NOT remove my credit from the index page. Keep it exactly where it is
+II. Do NOT take any part of my code to use for your personal designs
+III. Do NOT claim any part of my code as your own
+IV. NO redistrubuting of any of my code
+V. Editing is allowed. As long as it's NOT being claimed as your own
+ 
+CREDITS
+ 
+> Style-my-Tootips: http://manos.malihu.gr/style-my-tooltips-jquery-plugin/
+
+> Smoothscroll script: https://cdnjs.com/libraries/smoothscroll
+ 
+!-->
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 
+<head>
+
+<!--Custom Fonts-->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<!--Custom Fonts-->
+ 
+<!--Homelinks Icons-->
+<link rel="stylesheet" href="http://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<!--Homelinks Icons-->
+ 
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="altertnate" type="application/rss+xml" href="{RSS}">
+    <meta http-equiv="x-dns-prefetch-control" content="off"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
+
+<style type="text/css">
+
+/*------
+ 
+CUSTOMIZATION OPTIONS HERE. HERE YOU CAN GE EVERYTHING FROM THE COLORS TO THE OVERALL FONT SIZE TO YOUR LIKING!
+ 
+------ */
+
+:root {
+    --accent: #EC9969;
+    --accented-text: #ffffff;
+    --main-background: #fbfbfb;
+    --main-font: 13px;
+    --main-font-color: #888888;
+    --bolded: #000000;
+    --main-links: #B08E72;
+    --scrollbar: #EC9969;
+    --text-selection-background: #EC9969;
+    --text-selection: #fff;
+    --tooltip: #fff;
+    --tooltip-background: #EC9969;
+    --about-background: #ffffff;
+    --title-line-width: 25%;
+}
+ 
+/*----------FADE-IN ANIMATION----------*/
+ 
+@keyframes fadein {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+ 
+@-moz-keyframes fadein { /* Firefox */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+ 
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+ 
+@-o-keyframes fadein { /* Opera */
+    from {opacity:0;}
+    to {opacity: 1;}
+}
+ 
+/*----------TUMBLR CONTROLS----------*/
+ 
+iframe#tumblr_controls, .iframe-controls--desktop {
+    right: 10px !important;
+    top: 25px !important;
+    position: fixed !important;
+    z-index: 99999999999999999999 !important;
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%);
+    -webkit-transition: opacity 0.4s linear;opacity: 0.4;
+    -webkit-transition: all 0.8s ease-out;
+    -moz-transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out;
+    display: none;
+}
+ 
+/*----------SCROLLBAR----------*/
+ 
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar);
+    border-radius: 6px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: var(--main-background);
+    border-radius: 6px;
+}
+ 
+/*----------TOOLTIPS----------*/
+ 
+#s-m-t-tooltip {
+    max-width:300px;
+    padding:2px 5px;
+    margin: -20px 7px -2px 20px;
+    background-color: var(--tooltip-background);
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:lowercase;
+    color: var(--tooltip);  
+    z-index:999999999999999999999999999999999999;
+}
+ 
+/*----------TEXT SELECTION----------*/
+::selection {
+    background: var(--text-selection-background); /*change the color of the text selection background*/
+    color: var(--text-selection); /*change the color of the text selection*/
+}
+ 
+::-moz-selection {
+    background: var(--text-selection-background); /*change the color of the text selection background*/
+    color: var(--text-selection); /*change the color of the text selection*/
+}
+ 
+::-webkit-selection {
+    background: var(--text-selection-background); /*change the color of the text selection background*/
+    color: var(--text-selection); /*change the color of the text selection*/
+}
+ 
+/*----------THEME BASICS----------*/
+ 
+body {
+    color: var(--main-font-color);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: var(--main-font);
+    line-height: 180%;
+    margin: 0;
+    text-align: justify;
+    background: var(--main-background) url("") center; /*change the color of the main background and add a background image between the quotations*/
+    background-attachment: fixed;
+    background-repeat: repeat;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    animation: fadein 2.5s;
+    -moz-animation: fadein 2.5s; /* Firefox */
+    -webkit-animation: fadein 2.5s; /* Safari and Chrome */
+    -o-animation: fadein  2.5s; /* Opera */
+}
+ 
+b,strong {
+    color:var(--bolded);
+    font-weight: 700;
+}
+ 
+i,em {
+    color:var(--text);
+}
+ 
+u {
+    color:var(--bolded);
+}
+ 
+hr {
+    width: 30%;
+    height: 1px;
+    background-color: var(--about-me-text);
+    color: var(--about-me-text);
+    border: 0px solid transparent;
+}
+ 
+h1,h2,h3 {
+    font-weight: 700;
+    font-size: 2em;
+    color: var(--bolded);
+}
+ 
+small,sub,sup {
+    font-size: 10px;
+}
+ 
+a {
+    color: var(--main-links);
+    text-decoration:none;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+ 
+a:hover {
+    color: var(--link-hover);
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+/*----------CORNER BARS---------*/
+
+#bar-top {
+    position: fixed;
+    background-color: var(--about-background);
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 99;
+}
+
+#bar-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--bolded);
+}
+
+.homelinks a {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.0em;
+    font-weight: 600;
+    color: var(--bolded);
+}
+ 
+.homelinks a:hover {
+   color: var(--accent);
+}
+
+#bar-right {
+    position: fixed;
+    background-color: var(--about-background);
+    width: 50px;
+    height: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+#bar-bottom {
+    position: fixed;
+    background-color: var(--about-background);
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+}
+
+#bar-left {
+    position: fixed;
+    left: 0;
+    background-color: var(--about-background);
+    width: 50px;
+    height: 100%;
+    z-index: 1;
+}
+
+/*----------ACCENT BAR---------*/
+
+#accent-bar {
+    width: 100%;
+    height: 350px;
+    background-color: var(--accent);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#container {
+    width: 1060px;
+    height: 600px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*----------ABOUT ME CONTAINER & INFO---------*/
+
+#about-cont {
+    width: 750px;
+    height: 540px;
+    overflow: hidden;
+    background-color: var(--about-background);
+    color: var(--main-font-color);
+    z-index: 9;
+    padding: 30px;
+    margin: 0;
+    box-sizing: border-box;
+    float: right;
+}
+
+.about-title {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    position: relative;
+    width: auto;
+    color: var(--bolded);
+    font-size: 1.5em;
+}
+
+.about-title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--title-line-width);
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.about-title:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: var(--title-line-width);
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.about-me {
+    width: auto;
+    height: 385px;
+    padding: 0 20px;
+    overflow: auto;
+}
+
+/*----------SIDEBAR---------*/
+
+#sidebar {
+    width: 250px;
+    position: absolute;
+    float: left;
+}
+
+#sidebar img {
+    width: 250px;
+    height: 250px;
+    border: 15px solid var(--about-background);
+    box-sizing: border-box;
+}
+
+#sidebar-info {
+    margin-top: 15px;
+    color: var(--accented-text);
+}
+
+#sidebar-info span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#sidebar-info b {
+    background-color: var(--about-background);
+    color: var(--accent);
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+
+ 
+/*----------THEME CREDIT/DO NOT REMOVE!!!---------*/
+ 
+#bottom {
+    bottom: 65px;
+    position: fixed;
+    right: 70px;
+    background-color: var(--accent);
+    border-radius: 5px;
+    z-index: 999;
+}
+ 
+.cred {
+    padding: 5px;
+    width: auto;
+    height: 15px;
+    font-size: 15px;
+    line-height: 15px;
+    display: inline-block;
+    color: var(--accented-text);
+    z-index: 999;
+}
+ 
+.cred:hover {
+    color: var(--bolded);
+}
+
+</style>
+
+<!-----------Tooltips Script----------->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="http://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script src="http://static.tumblr.com/pbhn8p5/uhVos7fkg/tooltips.js"></script>
+<!-----------Tooltips Script----------->
+ 
+</head>
+
+<body>
+
+<div id="bar-top">
+       <div id="bar-title">Your love is like flowers and candy, understand me?</div> <!-----BANNER TITLE HERE-----> 
+       
+    <nav class="homelinks"> <!-----------NAVIGATION LINKS----------->
+        <a href="/">home</a></li>
+        <a href="/ask">mailbox</a></li>
+        <a href="/submit">submit</a></li>
+        <a href="/archive">archive</a></li>
+        <a href="/">link 1</a> <!-----custom link here-----> 
+        <a href="/">link 2</a> <!-----custom link here-----> 
+        <a href="/">link 3</a> <!-----custom link here-----> 
+    </nav>  <!-----------NAVIGATION LINKS----------->
+    
+</div>
+
+<!-----------CORNER BARS----------->
+<div id="bar-right"></div>
+<div id="bar-bottom"></div>
+<div id="bar-left"></div>
+<!-----------CORNER BARS----------->
+
+<section id="accent-bar"></section> <!-----------ACCENT BAR----------->
+
+<section id="container"> <!-----------MAIN CONTAINER----------->
+<aside id="sidebar"> <!-----------SIDEBAR----------->
+
+    <!-----SIDEBAR IMAGE HERE-----> 
+    <img src="https://static.tumblr.com/uh2chis/1g0q8mwrf/background-4938749_1280.png"> 
+    <!-----SIDEBAR IMAGE HERE-----> 
+    
+    <section id="sidebar-info"> 
+    <!-----ABOUT ME INFO BELOW----->
+    
+        <span><b>name</b> name here</span>
+        <span><b>pronouns</b> pronouns here</span>
+        <span><b>personality type</b> personality type here</span>
+        <span><b>age</b> age here</span>
+        <span><b>location</b> location here</span>
+    
+    <!-----ABOUT ME INFO ABOVE----->
+    </section> 
+</aside> <!-----------SIDEBAR----------->
+
+<article id="about-cont"> <!-----------ABOUT CONTAINER----------->
+    <h1 class="about-title">about the blogger</h1> <!-----ABOUT TITLE HERE----->
+    <section class="about-me">
+        <!-----ENTER YOUR ABOUT ME INFO BELOW----->
+        <p>
+        Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Ac turpis egestas integer eget aliquet nibh praesent. Aliquet sagittis id consectetur purus ut faucibus pulvinar. Elementum integer enim neque volutpat ac tincidunt vitae semper quis. At elementum eu facilisis sed. Lacus laoreet non curabitur gravida arcu. Eleifend mi in nulla posuere sollicitudin aliquam. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Consectetur adipiscing elit ut aliquam purus sit amet.
+        </p>
+        
+        <p>
+        Posuere morbi leo urna molestie at elementum eu facilisis. Pellentesque sit amet porttitor eget dolor morbi non arcu. Arcu ac tortor dignissim convallis aenean et tortor at risus. Non tellus orci ac auctor augue. Venenatis cras sed felis eget velit aliquet sagittis id. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Eget sit amet tellus cras adipiscing. Ultricies tristique nulla aliquet enim tortor at. Euismod lacinia at quis risus sed vulputate odio. Diam quis enim lobortis scelerisque fermentum dui.
+        </p>
+        
+        <p>
+        Quis vel eros donec ac odio tempor orci dapibus. Mauris pharetra et ultrices neque ornare aenean euismod. Id nibh tortor id aliquet lectus proin. Nunc lobortis mattis aliquam faucibus purus in massa. Enim lobortis scelerisque fermentum dui faucibus in ornare. 
+        </p>
+        <!-----ENTER YOUR ABOUT ME INFO ABOVE-----> 
+    </section>
+</article> <!-----------ABOUT CONTAINER----------->
+</section> <!-----------MAIN CONTAINER----------->
+
+<footer id="bottom">
+<!-------------------DO NOT REMOVE THEME CREDIT!!!------------------->
+ <a href="https://sheathemes.tumblr.com" class="cred" title="theme by sheathemes">&#169;</a>  
+<!-------------------DO NOT REMOVE THEME CREDIT!!!------------------->
+</footer>
+ 
+</body>
+</html> <!---------------------------END--------------------------->
