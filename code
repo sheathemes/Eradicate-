@@ -22,6 +22,8 @@ CREDITS
 > Style-my-Tootips: http://manos.malihu.gr/style-my-tooltips-jquery-plugin/
 
 > Smoothscroll script: https://cdnjs.com/libraries/smoothscroll
+
+> Icons: https://themify.me/themify-icons
  
 !-->
  
@@ -35,8 +37,7 @@ CREDITS
 <!--Custom Fonts-->
  
 <!--Homelinks Icons-->
-<link rel="stylesheet" href="http://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
-<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link href="https://rawgit.com/lykmapipo/themify-icons/master/css/themify-icons.css" rel="stylesheet">
 <!--Homelinks Icons-->
  
     <title>{Title}</title>
@@ -238,13 +239,14 @@ a:hover {
     position: fixed;
     background-color: var(--about-background);
     top: 0;
-    width: 100%;
+    right: 0;
+    left: 0;
+    padding: 0 15px;
     height: 50px;
     z-index: 99;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    z-index: 99;
 }
 
 #bar-title {
@@ -265,6 +267,63 @@ a:hover {
    color: var(--accent);
 }
 
+.info-button {
+    display: none;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: var(--accent);
+    border: none;
+    outline: none;
+}
+ 
+.info-button span {
+    display: block;
+    width: 37px;
+    height: 3px;
+    background-color: var(--accented-text);
+    position: absolute;
+    top: 24px;
+    transition: .5s;
+}
+ 
+.info-button span:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accented-text);
+    transition: .5s;
+}
+ 
+.info-button span:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accented-text);
+    transition: .5s;
+}
+ 
+.info-button.toggle span {
+    background-color: transparent;
+}
+ 
+.info-button.toggle span:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+ 
+.info-button.toggle span:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
 #bar-right {
     position: fixed;
     background-color: var(--about-background);
@@ -281,6 +340,9 @@ a:hover {
     width: 100%;
     height: 50px;
     z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #bar-left {
@@ -359,7 +421,6 @@ a:hover {
 }
 
 .about-me {
-    width: auto;
     height: 385px;
     padding: 0 20px;
     overflow: auto;
@@ -398,6 +459,9 @@ a:hover {
     margin-right: 5px;
 }
 
+.sidebar-lil {
+    display: none;
+}
  
 /*----------THEME CREDIT/DO NOT REMOVE!!!---------*/
  
@@ -425,6 +489,176 @@ a:hover {
     color: var(--bolded);
 }
 
+.cred-lil {
+    display: none;
+}
+
+/* ---------------- DO NOT TOUCH!!! ---------------- */
+
+@media screen and (max-width: 1200px) {
+    
+    #bar-left, #bar-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    
+    #accent-bar, #sidebar {
+        display: none;
+    }
+    
+    #container {
+        position: relative;
+        width: 90%;
+        height: auto;
+        margin: 120px auto;
+        left: 0;
+        top: 0;
+        transform: translate(0);
+    }
+    
+    #about-cont {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        float: none;
+    }
+    
+    .about-me {
+        padding: 0 20px;
+        overflow: unset;
+        height: auto;
+    }
+    
+    .about-title:before, .about-title:after {
+        display: none;
+    }
+    
+    .homelinks {
+        display: none;
+    }
+    
+    .info-button {
+        display: block;
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: var(--accent);
+        border: none;
+        outline: none;
+    }
+ 
+    .info-button span {
+        display: block;
+        width: 37px;
+        height: 3px;
+        background-color: var(--accented-text);
+        position: absolute;
+        top: 24px;
+        transition: .5s;
+    }
+ 
+    .info-button span:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--accented-text);
+        transition: .5s;
+    }
+ 
+    .info-button span:after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--accented-text);
+        transition: .5s;
+    }
+ 
+    .info-button.toggle span {
+        background-color: transparent;
+    }
+ 
+    .info-button.toggle span:before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+ 
+    .info-button.toggle span:after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    #bar-top {
+        padding: 0 0 0 15px;
+    }
+    
+    #bottom {
+        display: none;
+    }
+    
+    .sidebar-lil {
+        display: block;
+        width: 100%;
+        height: calc(100% - 50px);
+        box-sizing: border-box;
+        position: fixed;
+        left: calc(-100% - 50px);
+        bottom: 0;
+        background-color: var(--accent);
+        padding: 20px;
+        z-index: 99;
+        transition: .9s;
+    }
+    
+    .active {
+       left: 0%;
+    }
+
+    .sidebar-lil h1 {
+        color: var(--accented-text);
+        border-bottom: 1px dashed var(--accented-text);
+        padding-bottom: 10px;
+    }
+
+    .sidebar-lil .lil-homelinks a {
+        display: block;
+        margin: 10px 0;
+        color: var(--accented-text);
+    }
+    
+    .sidebar-lil .lil-homelinks a:hover {
+        color: var(--bolded);
+    }
+
+    .ti-link {
+        margin-right: 10px;
+        color: var(--accent);
+        background-color: var(--accented-text);
+        padding: 5px;
+    }
+    
+    /*----------THEME CREDIT/DO NOT REMOVE!!!---------*/
+    
+    .cred-lil {
+        display: block;
+        font-size: 1.1em;
+        font-weight: 600;
+        color: var(--bolded);
+    }
+
+    .cred-lil a:hover {
+        color: var(--accent);
+    }
+}
+
 </style>
 
 <!-----------Tooltips Script----------->
@@ -432,6 +666,15 @@ a:hover {
 <script src="http://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
 <script src="http://static.tumblr.com/pbhn8p5/uhVos7fkg/tooltips.js"></script>
 <!-----------Tooltips Script----------->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.info-button').click(function(){
+            $('.sidebar-lil').toggleClass('active');
+            $('.info-button').toggleClass('toggle');
+        })
+    });
+</script>
  
 </head>
 
@@ -439,6 +682,10 @@ a:hover {
 
 <div id="bar-top">
        <div id="bar-title">Your love is like flowers and candy, understand me?</div> <!-----BANNER TITLE HERE-----> 
+       
+       <button class="info-button">
+            <span></span>
+        </button>
        
     <nav class="homelinks"> <!-----------NAVIGATION LINKS----------->
         <a href="/">home</a></li>
@@ -452,9 +699,39 @@ a:hover {
     
 </div>
 
+<aside class="sidebar-lil">
+<h1>Basic Info</h1>
+    <section id="sidebar-info"> 
+    <!-----ABOUT ME INFO BELOW----->
+    
+        <span><b>name</b> name here</span>
+        <span><b>pronouns</b> pronouns here</span>
+        <span><b>personality type</b> personality type here</span>
+        <span><b>age</b> age here</span>
+        <span><b>location</b> location here</span>
+    
+    <!-----ABOUT ME INFO ABOVE----->
+    </section> 
+    
+    <h1>Navigation</h1>
+     <nav class="lil-homelinks"> <!-----------NAVIGATION LINKS----------->
+        <a href="/"><span class="ti-link"></span>home</a></li>
+        <a href="/ask"><span class="ti-link"></span>mailbox</a></li>
+        <a href="/submit"><span class="ti-link"></span>submit</a></li>
+        <a href="/archive"><span class="ti-link"></span>archive</a></li>
+        <a href="/"><span class="ti-link"></span>link 1</a> <!-----custom link here-----> 
+        <a href="/"><span class="ti-link"></span>link 2</a> <!-----custom link here-----> 
+        <a href="/"><span class="ti-link"></span>link 3</a> <!-----custom link here-----> 
+    </nav>  <!-----------NAVIGATION LINKS----------->
+</aside>
+
 <!-----------CORNER BARS----------->
 <div id="bar-right"></div>
-<div id="bar-bottom"></div>
+<div id="bar-bottom">
+    <!-------------------DO NOT REMOVE THEME CREDIT!!!------------------->
+ <a href="https://sheathemes.tumblr.com" class="cred-lil" title="theme by sheathemes">powered by sheathemes @ tumblr</a>  
+<!-------------------DO NOT REMOVE THEME CREDIT!!!------------------->
+</div>
 <div id="bar-left"></div>
 <!-----------CORNER BARS----------->
 
