@@ -24,6 +24,8 @@ CREDITS
 > Smoothscroll script: https://cdnjs.com/libraries/smoothscroll
 
 > Icons: https://themify.me/themify-icons
+
+> Removing tumblr app button on mobile themes: https://yeolithm.com/post/172903772712/tutorial-removing-tumblr-app-button-on-mobile
  
 !-->
  
@@ -512,7 +514,7 @@ a:hover {
         position: relative;
         width: 90%;
         height: auto;
-        margin: 120px auto;
+        margin: 90px auto;
         left: 0;
         top: 0;
         transform: translate(0);
@@ -657,6 +659,10 @@ a:hover {
     .cred-lil a:hover {
         color: var(--accent);
     }
+    
+    .tmblr-iframe--app-cta-button {
+        display: none!important;
+    }
 }
 
 </style>
@@ -681,7 +687,7 @@ a:hover {
 <body>
 
 <div id="bar-top">
-       <div id="bar-title">Your love is like flowers and candy, understand me?</div> <!-----BANNER TITLE HERE-----> 
+       <div id="bar-title">Your love is like flowers and candy.</div> <!-----BANNER TITLE HERE-----> 
        
        <button class="info-button">
             <span></span>
