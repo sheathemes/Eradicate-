@@ -11,3 +11,8 @@ CREDITS
 > Style-my-Tootips: http://manos.malihu.gr/style-my-tooltips-jquery-plugin/
 
 > Smoothscroll script: https://cdnjs.com/libraries/smoothscroll
+
+> Icons: https://themify.me/themify-icons
+
+> Removing tumblr app button on mobile themes: https://yeolithm.com/post/172903772712/tutorial-removing-tumblr-app-button-on-mobile
+ 
